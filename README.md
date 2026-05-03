@@ -1,11 +1,11 @@
-        1 # Feastly — Full-Stack Food Delivery Application
+        1 Feastly — Full-Stack Food Delivery Application
         2
         3 Feastly is a modern, responsive food delivery platform built with a focus on speed, real-time updates, and a seamless user experience. It
           features a Next.js frontend and a TypeScript Express backend.
         4
-        5 ## 🚀 Live Demo
-        6 - **Frontend**: [https://full-stack-assesment-eight.vercel.app/](https://full-stack-assesment-eight.vercel.app/)
-        7 - **Backend**: [https://order-managment-backend-pyg9.onrender.com](https://order-managment-backend-pyg9.onrender.com)
+        5 🚀 Live Demo
+        6 - Frontend: [https://full-stack-assesment-eight.vercel.app/](https://full-stack-assesment-eight.vercel.app/)
+        7 - Backend: [https://order-managment-backend-pyg9.onrender.com](https://order-managment-backend-pyg9.onrender.com)
      
        13 The project is split into two main components:
        14 1.  **Frontend (`food-delivery-frontend`)**: A Next.js 14 application using the App Router, Zustand for state management, and Tailwind CSS for
