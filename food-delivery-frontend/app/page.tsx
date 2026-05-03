@@ -12,22 +12,19 @@ async function getMenu(): Promise<MenuItem[]> {
   }
 }
 
-export default async function MenuPage(props: {
-  searchParams: Promise<{ category?: string }> | { category?: string };
+
+export default async function MenuPage({
+  searchParams,
+}: {
+  searchParams: { category?: string };
 }) {
-  const searchParams = await props.searchParams;
   const menuItems = await getMenu();
   const categories = [...new Set(menuItems.map((i) => i.category))];
-  
-  const rawCategory = searchParams.category;
-  const activeCategory = (Array.isArray(rawCategory) ? rawCategory[0] : rawCategory) || "All";
-  
+  const activeCategory = searchParams.category || "All";
   const filtered =
-    activeCategory.toLowerCase() === "all"
+    activeCategory === "All"
       ? menuItems
-      : menuItems.filter(
-          (i) => i.category.toLowerCase() === activeCategory.toLowerCase()
-        );
+      : menuItems.filter((i) => i.category === activeCategory);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
