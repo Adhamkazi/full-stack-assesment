@@ -35,9 +35,10 @@ export default function CheckoutPage() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [serverError, setServerError] = useState("");
 
-  if (items.length === 0) {
+  if (items.length === 0 && !isSubmitted) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-24 text-center">
         <p className="text-gray-500 mb-4">Nothing to checkout.</p>
@@ -76,6 +77,7 @@ export default function CheckoutPage() {
         return;
       }
 
+      setIsSubmitted(true);
       clearCart();
       router.push(`/order-status/${data.data.id}`);
     } catch {
